@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './layout//Login.css';
 import Profile from './Profile.jsx';
 import GetData from './data.js';
+import Registration from './Registration.jsx';
 
 function Login() {
   const [isLoggedIn, setLogin] = useState(false);
@@ -18,12 +19,11 @@ function Login() {
     if (GetData(savedLogin, savedPassword)) {
       setLoginInput(savedLogin);
       setPasswordInput(savedPassword);
-
     }
   }, []);
 
   const handleLogin = () => {
-    console.log(login, password)
+    console.log(login, password) // dev
     if (GetData(login, password)) {
       setLogin(true);
       localStorage.setItem('login', login);
@@ -34,6 +34,10 @@ function Login() {
       document.querySelector('#password').reset();
     }
   };
+
+  if (registration) {
+    return <Registration />
+  }
   if (isLoggedIn) {
     return <Profile />
   }

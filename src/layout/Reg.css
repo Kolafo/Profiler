@@ -31,19 +31,17 @@
   text-shadow: 0 0 8px white;
 }
 
-.form {
-  margin: 8px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  
+.box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
 input {
   border: solid black 3px;
   border-radius: 15px;
   text-align: center;
   font-size: 2em;
   height: 40px;
+	margin: 4px;
 }
+
